@@ -16,12 +16,15 @@ body {
     grid-column: 1;
 
     background-color: black;
+
+    display: flex;
+    justify-content: center;
+    justify-items: center;
 }
 
 h1 {
     color: red;
     margin-top: 20px;
-    text-align: center;
 }
 
 .main {
