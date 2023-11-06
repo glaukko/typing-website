@@ -107,7 +107,7 @@ function finish_test() {
     wpm = Math.trunc(wpm);
     let numWordsTyped = wordToType_ind
     if (testType == 'words') { numWordsTyped = words.length; }
-    resultLabel.innerHTML = '<span style=\"font-size: 48px; text-color: red;\">' + wpm.toString() + ' WPM</span><br><br>' + numWordsTyped + ' words in ' + Math.trunc(timer) + ' seconds';
+    resultLabel.innerHTML = '<span style=\"font-size: 48px; color: red;\">' + wpm.toString() + ' WPM</span><br><br><b>' + numWordsTyped + ' words</b> in <b>' + Math.trunc(timer) + ' seconds</b>';
 
     resultSection.style.borderStyle = "ridge";
     resultSection.style.borderRadius = "2px";
