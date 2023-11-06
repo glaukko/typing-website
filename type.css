@@ -1,7 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 6fr;
+    grid-template-rows: 90px 1fr;
     background-color: white;
 }
 
@@ -10,12 +15,12 @@ body {
     grid-row: 1;
     grid-column: 1;
 
-    margin: 0;
-    padding: 0;
+    background-color: black;
 }
 
 h1 {
     color: red;
+    margin-top: 20px;
     text-align: center;
 }
 
