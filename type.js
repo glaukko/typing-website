@@ -7,6 +7,8 @@ let words = [];
 let wordToType = '';
 let wordToType_ind = 0;
 
+let wordsHit = 0;
+
 const timerLabel = document.getElementById("timer");
 const typeBar = document.getElementById("typebar");
 const wordsLabel = document.getElementById("words");
@@ -42,6 +44,7 @@ async function setup_test() {
     //words = txt.split(' ')
     wordToType = words[0];
     wordToType_ind = 0;
+    wordsHit = 0;
     currentWordsHTML = '';
     timer = 0;
     typing = false;
@@ -65,19 +68,20 @@ var ontype = function on_type() {
     inputText = typeBar.value;
     if(inputText.length >= wordToType.length+10) { typeBar.value = typeBar.value.substring(0, typeBar.value.length-1); } //Do not allow to go on more than 10 characters wrong
 
-    if (inputText == wordToType + ' ' || words.indexOf(wordToType) == words.length-1 && inputText == wordToType) {
-        currentWordsHTML = currentWordsHTML + '<span class=\"hit\">' + wordToType + '</span> ';  
+    if (inputText.endsWith(' ') || words.indexOf(wordToType) == words.length-1 && inputText == wordToType) {
+        if (inputText == wordToType + ' ' || words.indexOf(wordToType) == words.length-1 && inputText == wordToType) {
+            currentWordsHTML = currentWordsHTML + '<span class=\"hit\">' + wordToType + '</span> ';  
+            wordsHit++;
+        }
+        else {
+            currentWordsHTML = currentWordsHTML + '<span class=\"miss\">' + wordToType + '</span> ';  
+        }
 
 
         typeBar.value = '';
         if(words.length-1 == wordToType_ind) { finish_test(); return; }
         wordToType = words[wordToType_ind+1]; //go to next word
         wordToType_ind += 1;
-
-
-
-
-        
 
     }
     else if (inputText != wordToType.substring(0, inputText.length)) {
@@ -102,12 +106,9 @@ function update_words_html() {
 
 function finish_test() {
     console.log(testType);
-    let wpm = (words.length / timer) * 60;
-    if (testType == 'time') { wpm = (wordToType_ind / timer) * 60; }
+    let wpm = (wordsHit / timer) * 60;
     wpm = Math.trunc(wpm);
-    let numWordsTyped = wordToType_ind
-    if (testType == 'words') { numWordsTyped = words.length; }
-    resultLabel.innerHTML = '<span style=\"font-size: 48px; color: red;\"<b>>' + wpm.toString() + ' WPM</b></span><br><br><b>' + numWordsTyped + ' words</b> in <b>' + Math.trunc(timer) + ' seconds</b>';
+    resultLabel.innerHTML = '<span style=\"font-size: 48px; color: red;\"><b>' + wpm.toString() + ' WPM</b></span><br><br><b>' + wordsHit + ' words</b> in <b>' + Math.trunc(timer) + ' seconds</b>';
 
     //resultSection.style.borderStyle = "ridge";
     //resultSection.style.borderRadius = "2px";

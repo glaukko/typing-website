@@ -8,7 +8,7 @@ const durationButtonArray = document.getElementById("duration-settings").childre
 let testType = "time"; //time or words
 let testDuration = parseInt(durationButtonArray[0].textContent);
 
-const highlightColor = 'red';
+const highlightColor = 'crimson';
 timerButton.style.color = highlightColor;
 durationButtonArray[0].style.color = highlightColor;
 
