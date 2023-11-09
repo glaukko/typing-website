@@ -38,7 +38,7 @@ h1 {
     
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 40px 2fr 1fr 2fr;
+    grid-template-rows: 40px 20px 2fr 1fr 2fr;
 
     justify-items: center;  
 }
@@ -87,10 +87,27 @@ h1 {
     color: black;
 }
 
+#duration-section {
+    grid-row: 2;
+    grid-column: 1;
+
+    display: flex;
+
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+    margin-top: 20px;
+
+    font-size: 24px;
+    color: crimson;
+
+}
+
 #words-section {
     margin-top: 25px;
 
-    grid-row: 2;
+    grid-row: 3;
     grid-column: 1;
     font-size: 35px;
     color: black;
@@ -101,7 +118,7 @@ h1 {
 }
 #typing-section {
     padding-top: 20px;
-    grid-row: 3;
+    grid-row: 4;
     grid-column: 1;
 
     color: black;
@@ -109,7 +126,7 @@ h1 {
 
 #result-section {
     margin-top: 25px;
-    grid-row: 4;
+    grid-row: 5;
     grid-column: 1;
     color: black;
     padding: 10px;
@@ -122,7 +139,10 @@ h1 {
 }
 
 #retry {
-    
+    padding: 0;
+    border: none;
+    background: none;
+    box-sizing: border-box;
 }
 
 .current {

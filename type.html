@@ -38,14 +38,17 @@
                     </div>
                 </div>
             </div>
+            <div id="duration-section">
+                <span id="timer"></span>
+            </div>
             <div id="words-section">
                 <span id="words"></span>
             </div>
             <div id="typing-section">
-                <input type="text" id="typebar" oninput="ontype();">
-                <button id="retry" onclick="setup_test();">Retry</button>
+                <input type="text" id="typebar" oninput="ontype();" autocomplete="off">
+                <button id="retry" onclick="setup_test();"><img src="https://icons.veryicon.com/png/o/internet--web/lobomeeting_web_designsystem/refresh-27.png" width="25" height="25" /></button>
                 <br> <br>
-                <span id="timer"></span>
+                
             </div>
             <div id="result-section">
                 <span id="result-wpm"></span>

@@ -52,7 +52,7 @@ async function setup_test() {
 
     wordsLabel.innerHTML = words.join(' ');
     console.log(words.length);
-    timerLabel.innerHTML = timer;
+    timerLabel.innerHTML = '';
     resultLabel.innerHTML = '';
     
     resultSection.style.borderStyle = "";
@@ -116,7 +116,7 @@ function finish_test() {
 
     typing = false;
     timer = 0;
-    timerLabel.innerHTML = timer;
+    timerLabel.innerHTML = '';
 
     if(testType == 'words') { wordsLabel.innerHTML = currentWordsHTML; }
     else { update_words_html(); }
